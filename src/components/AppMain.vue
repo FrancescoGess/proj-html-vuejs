@@ -18,7 +18,7 @@ export default{
             </h1>
 
             <!-- creare funzione al click per leggere del testo -->
-            <button class="text-uppercase fw-bold btn-light py-2 px-4">
+            <button style="border: none;" class="text-uppercase fw-bold btn-light py-2 px-4">
                 read more
             </button>
 
