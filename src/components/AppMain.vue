@@ -1,11 +1,13 @@
 <script>
+import PeliculaStudio from './PeliculaStudio.vue';
 import Slider from './Slider.vue';
 
 export default{
     name:"AppMain",
     components: {
-        Slider
-    },
+    Slider,
+    PeliculaStudio
+},
     data() {
         return {
             
@@ -15,102 +17,15 @@ export default{
 </script>
 
 <template>
-
-
-<Slider></Slider>
     <!-- creare slider -->
-    <!-- <div class="cinematic-main">
-        <img src="../assets/cinematic.jpg" alt="slider"> -->
-        <!-- <div class="title-cinematic py-2"> 
-            <span class="text-white text-uppercase fw-bold">
-                cinemato studio
-            </span>
-            <h1 class="text-uppercase text-white fw-bold py-3 ">
-                action and <br>
-                inspire people
-            </h1>
+    <div class="cinematic-main">
+        <Slider></Slider>
+        <!-- <img src="../assets/cinematic.jpg" alt="slider"> -->
+    </div>
 
-            
-            <button style="border: none;" class="text-uppercase fw-bold btn-light py-2 px-4">
-                read more
-            </button>
-
-        </div> -->
-
-        <!-- creare funzione al click prev e next -->
-        <!-- <div class="container-left-arrow">
-            <span>
-                <a @click="prevImg()" href=""><img style="width: 10px; opacity: 0.8;"  src="../assets/left-arrow.svg" alt=""></a>
-            </span>
-        </div>
-
-        <div class="container-right-arrow">
-            <span>
-                <a @click="nextImg()" href=""><img style="width: 10px; opacity: 0.8;"  src="../assets/right-arrow.svg" alt=""></a>
-            </span>
-        </div> -->
-
-    <!-- </div> -->
+    <!-- <PeliculaStudio></PeliculaStudio> -->
 </template>
 
 <style lang="scss" scoped>
-.cinematic-main{
-    border: 3px solid white;
 
-    img{
-        width: 100%;
-        height: 800px;
-    }
-
-//    background-image: url(../assets/cinematic.jpg);
-//    background-repeat: no-repeat;
-//    background-size: cover;
-//    background-position: center;
-
-   .title-cinematic{
-    height: 300px;
-    width: 75%;
-    margin: 0 auto;
-
-    margin-top: 150px;
-
-    .btn-custom{
-        margin-top: 20px;
-    }
-
-   }
-
-   .container-left-arrow{
-    position: relative;
-    
-    span{
-        padding: 15px;
-        
-        background-color: black;
-        opacity: 0.7;
-
-
-        position: absolute;
-        bottom: 100px;
-        left: 10px;
-    }
-   }
-
-   .container-right-arrow{
-    position: relative;
-    
-    span{
-        padding: 15px;
-        
-        background-color: black;
-        opacity: 0.7;
-
-
-        position: absolute;
-        bottom: 100px;
-        right: 10px;
-    }
-   }
-   
-}
 </style>

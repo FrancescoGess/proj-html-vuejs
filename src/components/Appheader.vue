@@ -32,7 +32,9 @@ export default{
             ],
         };
     },
-    components: { IconSvg }
+    components: { 
+        IconSvg 
+    }
 }
 </script>
 
