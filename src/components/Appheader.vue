@@ -1,58 +1,55 @@
 <script>
+import IconSvg from './iconSvg.vue';
+
 
 
 export default{
     name: "AppHeader",
-    data(){
-        return{
-            navLinks:[
-                    {
+    data() {
+        return {
+            navLinks: [
+                {
                     name: 'home',
-                    },
-                    {
+                },
+                {
                     name: 'blog',
-                    },
-                    {
+                },
+                {
                     name: 'pages',
-                    },
-                    {
+                },
+                {
                     name: 'about',
-                    },
-                    {
+                },
+                {
                     name: 'contacts',
-                    },
-                    {
+                },
+                {
                     name: 'gallery',
-                    },
-                    {
+                },
+                {
                     name: 'shop',
-                    }
-                ],
+                }
+            ],
             icons: [
-                    {
+                {
                     icon: 'fa-magnify-glass',
-                    
-                    },
-                    {
+                },
+                {
                     icon: 'fa-facebook-f',
-                    
-                    },
-                    {
+                },
+                {
                     icon: 'fa-twitter',
-                    
-                    },
-                    {
+                },
+                {
                     icon: 'fa-youtube',
-                    
-                    },
-                    {
+                },
+                {
                     icon: 'fa-instagram',
-                    
-                    }
+                }
             ]
-            
-        }
-    }
+        };
+    },
+    components: { IconSvg }
 }
 </script>
 
@@ -69,7 +66,7 @@ export default{
             <!-- NAVBAR -->
             <div>
                 <nav>
-                    <ul class="navbar-flex d-flex gap-4">
+                    <ul class="navbar-flex d-flex gap-5">
                         <li 
                         v-for="(element, index) in navLinks"
                         :key="index">
@@ -82,7 +79,12 @@ export default{
 
             <!-- SOCIAL LINKS -->
             <div class="icons">
-                <nav>
+
+                <IconSvg>
+
+                </IconSvg>
+
+                <!-- <nav>
                     <ul class="navbar-flex d-flex gap-4">
                         <li 
                         v-for="(element, index) in icons"
@@ -90,7 +92,7 @@ export default{
                             <a href="#">{{ element.icon }}</a>
                         </li>
                     </ul>
-                </nav>
+                </nav> -->
             </div>
         </div>
 </template>
