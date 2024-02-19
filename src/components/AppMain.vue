@@ -1,4 +1,5 @@
 <script>
+import AboutUs from './AboutUs.vue';
 import PeliculaStudio from './PeliculaStudio.vue';
 import Slider from './Slider.vue';
 
@@ -6,7 +7,8 @@ export default{
     name:"AppMain",
     components: {
     Slider,
-    PeliculaStudio
+    PeliculaStudio,
+    AboutUs
 },
     data() {
         return {
@@ -20,10 +22,10 @@ export default{
     <!-- creare slider -->
     <div class="cinematic-main">
         <Slider></Slider>
-        <!-- <img src="../assets/cinematic.jpg" alt="slider"> -->
     </div>
 
  <PeliculaStudio></PeliculaStudio>
+ <AboutUs></AboutUs>
 </template>
 
 <style lang="scss" scoped>
