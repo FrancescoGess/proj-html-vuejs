@@ -84,15 +84,7 @@ export default{
 
                 </IconSvg>
 
-                <!-- <nav>
-                    <ul class="navbar-flex d-flex gap-4">
-                        <li 
-                        v-for="(element, index) in icons"
-                        :key="index">
-                            <a href="#">{{ element.icon }}</a>
-                        </li>
-                    </ul>
-                </nav> -->
+
             </div>
         </div>
 </template>
@@ -100,7 +92,6 @@ export default{
 <style lang="scss" scoped>
 
 .head-page{
-    border: 1px solid red;
     height: 100%;
 }
 
