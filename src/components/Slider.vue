@@ -17,13 +17,13 @@
 
                 <div class="container-left-arrow">
                     <span>
-                        <a @click="prevImg" href=""><img style="width: 10px;" src="../assets/left-arrow.svg" alt=""></a>
+                        <a @click="prevImg()" href=""><img style="width: 10px;" src="../assets/left-arrow.svg" alt=""></a>
                     </span>
                 </div>
 
                 <div class="container-right-arrow">
                     <span>
-                        <a @click="nextImg" href=""><img style="width: 10px;"  src="../assets/right-arrow.svg" alt=""></a>
+                        <a @click="nextImg()" href=""><img style="width: 10px;"  src="../assets/right-arrow.svg" alt=""></a>
                     </span>
                 </div>
             </div>

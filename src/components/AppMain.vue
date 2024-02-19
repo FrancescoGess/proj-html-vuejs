@@ -23,7 +23,7 @@ export default{
         <!-- <img src="../assets/cinematic.jpg" alt="slider"> -->
     </div>
 
-    <!-- <PeliculaStudio></PeliculaStudio> -->
+ <PeliculaStudio></PeliculaStudio>
 </template>
 
 <style lang="scss" scoped>
