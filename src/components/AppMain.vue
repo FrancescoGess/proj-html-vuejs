@@ -1,14 +1,27 @@
 <script>
+import Slider from './Slider.vue';
+
 export default{
-    name:"AppMain"
-}
+    name:"AppMain",
+    components: {
+        Slider
+    },
+    data() {
+        return {
+            
+        }
+    }
+    }
 </script>
 
 <template>
 
+
+<Slider></Slider>
     <!-- creare slider -->
-    <div class="cinematic-main">
-        <div class="title-cinematic py-2">
+    <!-- <div class="cinematic-main">
+        <img src="../assets/cinematic.jpg" alt="slider"> -->
+        <!-- <div class="title-cinematic py-2"> 
             <span class="text-white text-uppercase fw-bold">
                 cinemato studio
             </span>
@@ -17,38 +30,42 @@ export default{
                 inspire people
             </h1>
 
-            <!-- creare funzione al click per leggere del testo -->
+            
             <button style="border: none;" class="text-uppercase fw-bold btn-light py-2 px-4">
                 read more
             </button>
 
-        </div>
+        </div> -->
 
         <!-- creare funzione al click prev e next -->
-        <div class="container-left-arrow">
+        <!-- <div class="container-left-arrow">
             <span>
-                <a href=""><img style="width: 10px; opacity: 0.8;"  src="../assets/left-arrow.svg" alt=""></a>
+                <a @click="prevImg()" href=""><img style="width: 10px; opacity: 0.8;"  src="../assets/left-arrow.svg" alt=""></a>
             </span>
         </div>
 
         <div class="container-right-arrow">
             <span>
-                <a href=""><img style="width: 10px; opacity: 0.8;"  src="../assets/right-arrow.svg" alt=""></a>
+                <a @click="nextImg()" href=""><img style="width: 10px; opacity: 0.8;"  src="../assets/right-arrow.svg" alt=""></a>
             </span>
-        </div>
+        </div> -->
 
-    </div>
+    <!-- </div> -->
 </template>
 
 <style lang="scss" scoped>
 .cinematic-main{
     border: 3px solid white;
-    height: 600px;
 
-   background-image: url(../assets/cinematic.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
+    img{
+        width: 100%;
+        height: 800px;
+    }
+
+//    background-image: url(../assets/cinematic.jpg);
+//    background-repeat: no-repeat;
+//    background-size: cover;
+//    background-position: center;
 
    .title-cinematic{
     height: 300px;

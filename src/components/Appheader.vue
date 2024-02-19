@@ -30,23 +30,6 @@ export default{
                     name: 'shop',
                 }
             ],
-            icons: [
-                {
-                    icon: 'fa-magnify-glass',
-                },
-                {
-                    icon: 'fa-facebook-f',
-                },
-                {
-                    icon: 'fa-twitter',
-                },
-                {
-                    icon: 'fa-youtube',
-                },
-                {
-                    icon: 'fa-instagram',
-                }
-            ]
         };
     },
     components: { IconSvg }
@@ -66,7 +49,7 @@ export default{
             <!-- NAVBAR -->
             <div>
                 <nav>
-                    <ul class="navbar-flex d-flex gap-5">
+                    <ul class="navbar-flex d-flex gap-5 my-2">
                         <li 
                         v-for="(element, index) in navLinks"
                         :key="index">
