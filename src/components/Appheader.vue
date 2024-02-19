@@ -1,8 +1,120 @@
 <script>
+
+
+export default{
+    name: "AppHeader",
+    data(){
+        return{
+            navLinks:[
+                    {
+                    name: 'home',
+                    },
+                    {
+                    name: 'blog',
+                    },
+                    {
+                    name: 'pages',
+                    },
+                    {
+                    name: 'about',
+                    },
+                    {
+                    name: 'contacts',
+                    },
+                    {
+                    name: 'gallery',
+                    },
+                    {
+                    name: 'shop',
+                    }
+                ],
+            icons: [
+                    {
+                    icon: 'fa-magnify-glass',
+                    
+                    },
+                    {
+                    icon: 'fa-facebook-f',
+                    
+                    },
+                    {
+                    icon: 'fa-twitter',
+                    
+                    },
+                    {
+                    icon: 'fa-youtube',
+                    
+                    },
+                    {
+                    icon: 'fa-instagram',
+                    
+                    }
+            ]
+            
+        }
+    }
+}
 </script>
 
 <template>
+
+    <div class="head-page p-2 d-flex justify-content-between align-items-center">
+            <!-- LOGO -->
+            <div class="container-logo p-3">
+                <figure>
+                    <a href="#"><img src="../assets/logo.svg" alt="logo footer"></a>
+                </figure>
+            </div>
+
+            <!-- NAVBAR -->
+            <div>
+                <nav>
+                    <ul class="navbar-flex d-flex gap-4">
+                        <li 
+                        v-for="(element, index) in navLinks"
+                        :key="index">
+                            <a href="#">{{ element.name }}</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+            </div>
+
+            <!-- SOCIAL LINKS -->
+            <div class="icons">
+                <nav>
+                    <ul class="navbar-flex d-flex gap-4">
+                        <li 
+                        v-for="(element, index) in icons"
+                        :key="index">
+                            <a href="#">{{ element.icon }}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
+
+.head-page{
+    border: 1px solid red;
+    height: 100%;
+}
+
+.container-logo { 
+    width: 250px;
+}
+
+.navbar-flex{
+    
+    list-style-type: none;
+        a{
+            text-decoration: none;
+            text-transform: uppercase;
+
+            color: black;
+            font-weight: bold;
+        }
+}
 </style>
