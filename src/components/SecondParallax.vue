@@ -21,10 +21,18 @@ export default{
               this.timer = setInterval(this.next, 3000)
           },
         next: function() {
-            this.currentIndex += 1;
+            if (this.currentIndex + 1 == this.list.lenght){
+            this.currentIndex = 0
+          } else{
+            this.currentIndex = this.currentIndex + 1
+          }
         },
         prev: function() {
-            this.currentIndex -= 1;
+            if ( this.currentIndex - 1 < 0 ){
+              this.currentIndex = this.list.lenght - 1
+            } else{
+              this.currentIndex = this.currentIndex - 1
+            }
     }
     },
     computed: {
@@ -70,8 +78,6 @@ export default{
         <img class="img-slide" :src="currentImg"/>
       </div>
     </transition-group>
-    <a class="prev" @click="prev" href="#">&#10094; Previous</a>
-    <a class="next" @click="next" href="#">&#10095; Next</a>
   </div>
 
 </template>

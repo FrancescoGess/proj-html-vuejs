@@ -5,7 +5,6 @@ import MeetTeam from './MeetTeam.vue';
 import PeliculaStudio from './PeliculaStudio.vue';
 import SecondParallax from './SecondParallax.vue';
 import Slider from './Slider.vue';
-import TextSlider from './TextSlider.vue';
 import WatchList from './WatchList.vue';
 
 export default{
@@ -18,7 +17,6 @@ export default{
     FirstParallax,
     MeetTeam,
     SecondParallax,
-    TextSlider
 },
     data() {
         return {

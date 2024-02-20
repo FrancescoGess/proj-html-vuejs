@@ -9,7 +9,7 @@
         cinemato studio
     </h6>
     <h1 class="text-uppercase">
-        action and <br> inspire people
+        {{ list[currentIndex].title }}
     </h1>
 
         <button style="border: none; margin-top: 30px;" class="text-uppercase fw-bold btn-light py-2 px-4">
@@ -22,8 +22,9 @@
             <div>
                 <transition-group name="fade" tag="div">
                     <div v-for="i in [currentIndex]" :key="i">
-                        <img :src="currentImg"/>
+                        <img :src="list[i].image"/>
                     </div>
+                    <!-- <img :src="list[currentIndex].image"/> -->
                 </transition-group>
             </div>
                 <a class="prev" @click="prev" href="#">&#10094;</a>
@@ -37,10 +38,19 @@ export default{
     name: "Slider",
     data(){
         return{
-            images:[
-            'src/assets/cinematic.jpg',
-            'src/assets/slider2.webp',
-            'src/assets/slider3.avif'
+            list: [
+            {
+                image: 'src/assets/cinematic.jpg',
+                title: 'action and inspire people'
+            },
+            {
+                image: 'src/assets/slider2.webp',
+                title: 'test'
+            },
+            {
+                image: 'src/assets/slider3.avif',
+                title: 'test2'
+            },
             ],
             timer: null,
             currentIndex: 0
@@ -54,17 +64,19 @@ export default{
                this.timer = setInterval(this.next, 3000)
            },
         next: function() {
-            this.currentIndex += 1;
+            if(this.currentIndex + 1 == this.list.length){
+                this.currentIndex = 0
+            } else{
+                this.currentIndex = this.currentIndex + 1
+            }
         },
         prev: function() {
-            this.currentIndex -= 1;
+            if( (this.currentIndex - 1) < 0 ){
+            this.currentIndex = this.list.length - 1
+        } else {
+            this.currentIndex = this.currentIndex - 1
+        }}
     }
-    },
-    computed: {
-    currentImg: function() {
-      return this.images[Math.abs(this.currentIndex) % this.images.length];
-    }
-  }
 
 }
 
