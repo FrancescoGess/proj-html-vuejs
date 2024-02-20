@@ -3,56 +3,83 @@ export default{
     name: "SecondParallax",
     data(){
         return{
-            images:[
-                'src/assets/parallax-02.jpg',
-                'src/assets/cinematic-street-photography-1.jpg',
-                'src/assets/fstoppers_cinematic_challenge_davidgeffin_dennis1.jpg',
-                'src/assets/4349192.jpg'
+          list: [
+            {
+                image: 'src/assets/Parallax-02.jpg',
+                title: 'action and inspire people',
+                active: true,
+                description: 'lorem ipsum'
+            },
+            {
+                image: 'src/assets/cinefy.webp',
+                title: 'test',
+                active: false,
+                description: 'lorem ipsum'
+            },
+            {
+                image: 'src/assets/cinefy2.webp',
+                title: 'test2',
+                active: false,
+                description: 'lorem ipsum'
+            },
             ],
-            timer: null,
             currentIndex: 0
         };
-    },
-   mounted: function(){
-       this.startSlide()
-   },
+    }
+   }
     methods:{
-         startSlide: function(){
-              this.timer = setInterval(this.next, 3000)
-          },
-        next: function() {
-            if (this.currentIndex + 1 == this.list.lenght){
-            this.currentIndex = 0
-          } else{
-            this.currentIndex = this.currentIndex + 1
-          }
-        },
-        prev: function() {
-            if ( this.currentIndex - 1 < 0 ){
-              this.currentIndex = this.list.lenght - 1
-            } else{
-              this.currentIndex = this.currentIndex - 1
-            }
-    }
-    },
-    computed: {
-    currentImg: function() {
-      return this.images[Math.abs(this.currentIndex) % this.images.length];
-    }
-  }
+    
 
-}
+
+
+
+    //  startSlide: function(){
+    //       this.timer = setInterval(this.next, 3000)
+    //   },
+    //     next: function() {
+    //         if (this.currentIndex + 1 == this.list.lenght){
+    //         this.currentIndex = 0
+    //       } else{
+    //         this.currentIndex = this.currentIndex + 1
+    //       }
+    //     },
+    //     prev: function() {
+    //         if ( this.currentIndex - 1 < 0 ){
+    //           this.currentIndex = this.list.lenght - 1
+    //         } else{
+    //           this.currentIndex = this.currentIndex - 1
+    //         }
+    // }
+    }
 </script>
 
 <template>
-  <div class="text-slider">
+  
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button @click="this.currentIndex = 0" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button @click="this.currentIndex = 1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button @click="this.currentIndex = 2" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div 
+    v-for="i in list" :key="i"
+    class="carousel-item"
+    :class="{active: i.active}">
+      <img :src="i.image" class="d-block w-100 h-50" alt="slider">
+    </div>
+  </div>
+</div>
+
+<div class="text-slider">
         <div class="absolute-container">
         <h1>
             &#10077;
         </h1>
 
         <p>
-            Un designer ha il dovere di creare un design senza tempo. Per essere senza tempo devi pensare molto <br>lontano nel futuro, non il prossimo anno, non tra due anni, <br> ma tra un minimo di 20 anni. 
+            {{list[currentIndex].description}} 
         </p>
 
     <div class="d-flex container-pic-citazione gap-3 align-items-center">
@@ -71,34 +98,40 @@ export default{
         <!-- - Phillip Starck, creatore, designer e architetto -->
     </div>
     </div>
-
-    <div>
+   <!-- <div>
     <transition-group name="fade" tag="div">
       <div v-for="i in [currentIndex]" :key="i">
         <img class="img-slide" :src="currentImg"/>
       </div>
     </transition-group>
-  </div>
+  </div> -->
 
 </template>
 
 <style lang="scss" scoped>
-.text-slider{
-        
 
+.text-slider{
         position: relative;
         color: white;
 
         .absolute-container{
             position: absolute;
+            bottom: 500px;
+            left: 25%;
 
-            top: 300px;
-            left: 35%;
+            font-size: 30px;
             
         }
 
+        .container-pic-citazione{
+          font-size: 30px;
+        }
+
+        
         .container-pic-citazione figure img{
-            border-radius: 50px;
+          width: 80px;
+          border-radius: 50px;
+
         }
     }
 
@@ -111,7 +144,7 @@ export default{
    opacity: 1;
  }
 
- .fade-enter,
+ .fade-enter
  .fade-leave-to {
    visibility: hidden;
    width:100%;

@@ -20,12 +20,12 @@
 </div>
         </div>
             <div>
-                <transition-group name="fade" tag="div">
+                <div name="fade" tag="div">
                     <div v-for="i in [currentIndex]" :key="i">
                         <img :src="list[i].image"/>
                     </div>
                     <!-- <img :src="list[currentIndex].image"/> -->
-                </transition-group>
+                </div>
             </div>
                 <a class="prev" @click="prev" href="#">&#10094;</a>
                 <a class="next" @click="next" href="#">&#10095;</a>
@@ -76,7 +76,8 @@ export default{
         } else {
             this.currentIndex = this.currentIndex - 1
         }}
-    }
+    },
+
 
 }
 
