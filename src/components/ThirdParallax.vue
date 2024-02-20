@@ -35,8 +35,8 @@ export default{
 
 <style lang="scss" scoped>
     .parallax{
-        background-image: url(../assets/Parallax-01.jpg);
-        background-position: bottom;
+        background-image: url(../assets/Parallax-03.jpg);
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
 
