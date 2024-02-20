@@ -1,33 +1,33 @@
 <template>
     <div class="slider">
-        <img 
-        :src="slides[0].image " alt="pic">
-        <div class="cinematic-main">
-            <div class="position-object">
-                <span class="text-white text-uppercase fw-bold">
-                    cinemato studio
-                </span>
-                <h1 class="text-uppercase text-white fw-bold py-3 ">
-                    action and <br>
-                    inspire people
-                </h1>
-                <button style="border: none;" class="text-uppercase fw-bold btn-light py-2 px-4">
-                    read more
-                </button>
+        <div class="text-slider">
+            <div class="position-text p-2">
 
-                <div class="container-left-arrow">
-                    <span>
-                        <a @click="prevImg()" href=""><img style="width: 10px;" src="../assets/left-arrow.svg" alt=""></a>
-                    </span>
-                </div>
+<div class="container-about text-white fw-bold">
+    <div  class="absolute-text">
+    <h6 class="text-uppercase">
+        cinemato studio
+    </h6>
+    <h1 class="text-uppercase">
+        action and <br> inspire people
+    </h1>
 
-                <div class="container-right-arrow">
-                    <span>
-                        <a @click="nextImg()" href=""><img style="width: 10px;"  src="../assets/right-arrow.svg" alt=""></a>
-                    </span>
-                </div>
-            </div>
+        <button style="border: none; margin-top: 30px;" class="text-uppercase fw-bold btn-light py-2 px-4">
+            read more
+        </button>
+</div>
+</div>
+</div>
         </div>
+            <div>
+                <transition-group name="fade" tag="div">
+                    <div v-for="i in [currentIndex]" :key="i">
+                        <img :src="currentImg"/>
+                    </div>
+                </transition-group>
+            </div>
+                <a class="prev" @click="prev" href="#">&#10094;</a>
+                <a class="next" @click="next" href="#">&#10095;</a>
     </div>
 </template>
 
@@ -35,77 +35,97 @@
 
 export default{
     name: "Slider",
-    data() {
-        return {
-            currentImg: 0,
-            autoScroll: null,
-            slides: [
-                {
-                    image:'src/assets/cinematic.jpg'
-                },
-                {
-                    image:'src/assets/slider2.webp'
-                },
-                {
-                    image:'src/assets/slider3.avif'
-                }
-            ]
-        }
+    data(){
+        return{
+            images:[
+            'src/assets/cinematic.jpg',
+            'src/assets/slider2.webp',
+            'src/assets/slider3.avif'
+            ],
+            timer: null,
+            currentIndex: 0
+        };
     },
+     mounted: function(){
+         this.startSlide()
+     },
     methods:{
-        prevImg(){
-            if (this.currentImg <= 0){
-                this.currentImg = this.slides.length - 1
-            } else {
-                this.currentImg--
-            }
-        }, nextImg(){
-            if (this.currentImg >= this.slides.length - 1)
-            this.currentImg = 0
-        else{
-            this.currentImg++
-        }
-        }, 
-        currentImg(index){
-            this.currentImg = index
-        }
+           startSlide: function(){
+               this.timer = setInterval(this.next, 3000)
+           },
+        next: function() {
+            this.currentIndex += 1;
+        },
+        prev: function() {
+            this.currentIndex -= 1;
     }
+    },
+    computed: {
+    currentImg: function() {
+      return this.images[Math.abs(this.currentIndex) % this.images.length];
+    }
+  }
+
 }
 
 </script>
 
+
 <style lang="scss" scoped>
-.cinematic-main{
+.text-slider{
     position: relative;
 
-    .position-object{
+    .position-text{
         position: absolute;
-        top: -800px;
-        left: 200px;
+        top: 200px;
+        left: 20%;
     }
-
-    .container-left-arrow{
-        position: relative;
-
-        span{
-            position: absolute;
-            top: 50px;
-            left: -150px;
-        }
-    }
-    
-
-    .container-right-arrow{
-        position: relative;
-
-        span{
-            position: absolute;
-            top: 50px;
-            right: -1300px;
-        }
-    }
-    
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  overflow: hidden;
+  visibility: visible;
+  position: absolute;
+  width:100%;
+  opacity: 1;
+}
+
+.fade-enter,
+.fade-leave-to {
+  visibility: hidden;
+  width:100%;
+  opacity: 0;
+}
+
+img {
+  height:800px;
+  width:100%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.7s ease;
+  border-radius: 0 4px 4px 0;
+  text-decoration: none;
+}
+
+.next {
+  right: 0;
+  
+}
+
+.prev {
+  left: 0;
+}
+
 
 .slider{
     border: 5px solid white;

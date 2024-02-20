@@ -38,7 +38,7 @@ export default{
  <MeetTeam></MeetTeam>
  <SecondParallax>
 </SecondParallax>
-<TextSlider></TextSlider>
+<!-- <TextSlider></TextSlider> -->
 </template>
 
 <style lang="scss" scoped>

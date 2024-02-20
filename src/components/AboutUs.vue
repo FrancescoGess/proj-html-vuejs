@@ -34,7 +34,7 @@ export default {
     </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
 .about-us{
     background-image: url(../assets/About-Us.jpg);
     background-position: center;
