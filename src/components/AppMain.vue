@@ -2,13 +2,15 @@
 import AboutUs from './AboutUs.vue';
 import PeliculaStudio from './PeliculaStudio.vue';
 import Slider from './Slider.vue';
+import WatchList from './WatchList.vue';
 
 export default{
     name:"AppMain",
     components: {
     Slider,
     PeliculaStudio,
-    AboutUs
+    AboutUs,
+    WatchList
 },
     data() {
         return {
@@ -19,13 +21,11 @@ export default{
 </script>
 
 <template>
-    <!-- creare slider -->
-    <div class="cinematic-main">
-        <Slider></Slider>
-    </div>
 
+ <Slider></Slider> 
  <PeliculaStudio></PeliculaStudio>
  <AboutUs></AboutUs>
+ <WatchList></WatchList>
 </template>
 
 <style lang="scss" scoped>

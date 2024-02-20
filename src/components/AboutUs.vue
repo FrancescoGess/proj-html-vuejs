@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-    <div class="about-us">
+    <div class="about-us p-2">
 
         <div class="container-about">
             <div  class="absolute-text">
@@ -42,6 +42,7 @@ export default {
     background-repeat: no-repeat;
     height: 500px;
     color: white;
+    border: 2px solid white;
 
     .container-about{
         position: relative;

@@ -63,21 +63,7 @@ export default{
                 Lorem ipsum dolor sit amet consectetur.
             </span>
         </div>   
-   </div>
-
-        <!-- <div class="container text-center">
-            <div class="row">
-              <div class="col">
-                
-              </div>
-              <div class="col">
-                
-              </div>
-              <div class="col">
-                
-              </div>
-            </div>
-          </div> -->
+    </div>
     </div>
 </template>
 
