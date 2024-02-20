@@ -34,13 +34,13 @@ export default{
 
 <template>
 
- <Slider></Slider> 
- <PeliculaStudio></PeliculaStudio>
- <AboutUs></AboutUs>
- <WatchList></WatchList>
- <FirstParallax></FirstParallax>
- <MeetTeam></MeetTeam>
- <SecondParallax>
+<Slider></Slider> 
+<PeliculaStudio></PeliculaStudio>
+<AboutUs></AboutUs>
+<WatchList></WatchList>
+<FirstParallax></FirstParallax>
+<MeetTeam></MeetTeam>
+<SecondParallax>
 </SecondParallax>
 <LatestNews></LatestNews>
 <ThirdParallax></ThirdParallax>

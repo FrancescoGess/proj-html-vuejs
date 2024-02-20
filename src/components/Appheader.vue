@@ -77,7 +77,12 @@ export default{
 <style lang="scss" scoped>
 
 .head-page{
-    height: 100%;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .container-logo { 

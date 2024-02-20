@@ -45,11 +45,11 @@ export default{
             },
             {
                 image: 'src/assets/slider2.webp',
-                title: 'test'
+                title: 'cinematic slideshow'
             },
             {
                 image: 'src/assets/slider3.avif',
-                title: 'test2'
+                title: 'fireborn cinematic trailer'
             },
             ],
             timer: null,
@@ -90,8 +90,8 @@ export default{
 
     .position-text{
         position: absolute;
-        top: 200px;
-        left: 20%;
+        top: 500px;
+        left: 30%;
     }
 }
 
@@ -100,7 +100,7 @@ export default{
   overflow: hidden;
   visibility: visible;
   position: absolute;
-  width:100%;
+  width: 100%;
   opacity: 1;
 }
 
@@ -112,8 +112,8 @@ export default{
 }
 
 img {
-  height:800px;
-  width:100%;
+  height: 1200px;
+  width: 100%;
 }
 
 .prev, .next {

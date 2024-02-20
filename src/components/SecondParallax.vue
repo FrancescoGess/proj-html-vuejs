@@ -8,19 +8,19 @@ export default{
                 image: 'src/assets/Parallax-02.jpg',
                 title: 'action and inspire people',
                 active: true,
-                description: 'lorem ipsum'
+                description: 'Non avere paura della perfezione, non la raggiungerai mai'
             },
             {
                 image: 'src/assets/cinefy.webp',
                 title: 'test',
                 active: false,
-                description: 'lorem ipsum'
+                description: 'Il pubblico ha più familiarità con il cattivo design che con il buon design, in effetti è condizionato a preferire un cattivo design, perché è quello con cui vive, il nuovo diventa minaccioso, il vecchio rassicurante'
             },
             {
                 image: 'src/assets/cinefy2.webp',
                 title: 'test2',
                 active: false,
-                description: 'lorem ipsum'
+                description: 'Più mi occupo del lavoro come qualcosa che è mio, come qualcosa di personale, tanto più successo.'
             },
             ],
             currentIndex: 0
@@ -155,30 +155,4 @@ export default{
    height:800px;
    width:100%;
  }
-
-// .prev, .next {
-//   cursor: pointer;
-//   position: absolute;
-//   top: 40%;
-//   width: auto;
-//   padding: 16px;
-//   color: white;
-//   font-weight: bold;
-//   font-size: 18px;
-//   transition: 0.7s ease;
-//   border-radius: 0 4px 4px 0;
-//   text-decoration: none;
-// }
-
-// .next {
-//   right: 0;
-// }
-
-// .prev {
-//   left: 0;
-// }
-
-// .prev:hover, .next:hover {
-//   background-color: rgba(0,0,0,0.9);
-// }
 </style>
