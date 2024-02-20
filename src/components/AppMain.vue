@@ -3,7 +3,9 @@ import AboutUs from './AboutUs.vue';
 import FirstParallax from './FirstParallax.vue';
 import MeetTeam from './MeetTeam.vue';
 import PeliculaStudio from './PeliculaStudio.vue';
+import SecondParallax from './SecondParallax.vue';
 import Slider from './Slider.vue';
+import TextSlider from './TextSlider.vue';
 import WatchList from './WatchList.vue';
 
 export default{
@@ -14,7 +16,9 @@ export default{
     AboutUs,
     WatchList,
     FirstParallax,
-    MeetTeam
+    MeetTeam,
+    SecondParallax,
+    TextSlider
 },
     data() {
         return {
@@ -32,6 +36,9 @@ export default{
  <WatchList></WatchList>
  <FirstParallax></FirstParallax>
  <MeetTeam></MeetTeam>
+ <SecondParallax>
+</SecondParallax>
+<TextSlider></TextSlider>
 </template>
 
 <style lang="scss" scoped>
