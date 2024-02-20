@@ -86,7 +86,7 @@ export default{
         .absolute-container{
             position: absolute;
 
-            top: 350px;
+            top: 300px;
             left: 35%;
             
         }
