@@ -17,9 +17,9 @@ export default{
         this.startSlide()
     },
     methods:{
-         startSlide: function(){
-             this.timer = setInterval(this.next, 3000)
-         },
+          startSlide: function(){
+              this.timer = setInterval(this.next, 3000)
+          },
         next: function() {
             this.currentIndex += 1;
         },
@@ -52,7 +52,6 @@ export default{
 <style lang="scss" scoped>
     .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.9s ease;
   overflow: hidden;
   visibility: visible;
   position: absolute;
