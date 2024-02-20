@@ -8,6 +8,7 @@ import Slider from './Slider.vue';
 import WatchList from './WatchList.vue';
 import LatestNews from './LatestNews.vue';
 import AppForm from './AppForm.vue';
+import ThirdParallax from './ThirdParallax.vue';
 
 export default{
     name:"AppMain",
@@ -20,7 +21,8 @@ export default{
     MeetTeam,
     SecondParallax,
     LatestNews,
-    AppForm
+    AppForm,
+    ThirdParallax
 },
     data() {
         return {
@@ -41,6 +43,7 @@ export default{
  <SecondParallax>
 </SecondParallax>
 <LatestNews></LatestNews>
+<ThirdParallax></ThirdParallax>
 <AppForm></AppForm>
 </template>
 
