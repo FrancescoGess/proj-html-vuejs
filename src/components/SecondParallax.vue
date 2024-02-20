@@ -13,13 +13,13 @@ export default{
             currentIndex: 0
         };
     },
-    // mounted: function(){
-    //     this.startSlide()
-    // },
+   mounted: function(){
+       this.startSlide()
+   },
     methods:{
-          // startSlide: function(){
-          //     this.timer = setInterval(this.next, 3000)
-          // },
+         startSlide: function(){
+              this.timer = setInterval(this.next, 3000)
+          },
         next: function() {
             this.currentIndex += 1;
         },
@@ -37,10 +37,37 @@ export default{
 </script>
 
 <template>
+  <div class="text-slider">
+        <div class="absolute-container">
+        <h1>
+            &#10077;
+        </h1>
+
+        <p>
+            Un designer ha il dovere di creare un design senza tempo. Per essere senza tempo devi pensare molto <br>lontano nel futuro, non il prossimo anno, non tra due anni, <br> ma tra un minimo di 20 anni. 
+        </p>
+
+    <div class="d-flex container-pic-citazione gap-3 align-items-center">
+        <figure>
+            <img src="../assets/03.jpg" alt="person">
+        </figure>
+        <div class="d-flex row">
+        <span class="text-uppercase fw-bold">
+            Phillip Starck
+        </span>
+        <span>
+            Designer
+        </span>
+        </div>
+    </div>
+        <!-- - Phillip Starck, creatore, designer e architetto -->
+    </div>
+    </div>
+
     <div>
     <transition-group name="fade" tag="div">
       <div v-for="i in [currentIndex]" :key="i">
-        <img :src="currentImg"/>
+        <img class="img-slide" :src="currentImg"/>
       </div>
     </transition-group>
     <a class="prev" @click="prev" href="#">&#10094; Previous</a>
@@ -50,26 +77,45 @@ export default{
 </template>
 
 <style lang="scss" scoped>
-// .fade-enter-active,
-// .fade-leave-active {
-//   overflow: hidden;
-//   visibility: visible;
-//   position: absolute;
-//   width:100%;
-//   opacity: 1;
-// }
+.text-slider{
+        
 
-// .fade-enter,
-// .fade-leave-to {
-//   visibility: hidden;
-//   width:100%;
-//   opacity: 0;
-// }
+        position: relative;
+        color: white;
 
-// img {
-//   height:800px;
-//   width:100%;
-// }
+        .absolute-container{
+            position: absolute;
+
+            top: 350px;
+            left: 35%;
+            
+        }
+
+        .container-pic-citazione figure img{
+            border-radius: 50px;
+        }
+    }
+
+ .fade-enter-active,
+ .fade-leave-active {
+   overflow: hidden;
+   visibility: visible;
+   position: absolute;
+   width:100%;
+   opacity: 1;
+ }
+
+ .fade-enter,
+ .fade-leave-to {
+   visibility: hidden;
+   width:100%;
+   opacity: 0;
+ }
+
+ .img-slide {
+   height:800px;
+   width:100%;
+ }
 
 // .prev, .next {
 //   cursor: pointer;
