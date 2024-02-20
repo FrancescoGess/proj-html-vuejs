@@ -6,6 +6,7 @@ import PeliculaStudio from './PeliculaStudio.vue';
 import SecondParallax from './SecondParallax.vue';
 import Slider from './Slider.vue';
 import WatchList from './WatchList.vue';
+import LatestNews from './LatestNews.vue';
 
 export default{
     name:"AppMain",
@@ -17,6 +18,7 @@ export default{
     FirstParallax,
     MeetTeam,
     SecondParallax,
+    LatestNews
 },
     data() {
         return {
@@ -36,7 +38,7 @@ export default{
  <MeetTeam></MeetTeam>
  <SecondParallax>
 </SecondParallax>
-<!-- <TextSlider></TextSlider> -->
+<LatestNews></LatestNews>
 </template>
 
 <style lang="scss" scoped>
