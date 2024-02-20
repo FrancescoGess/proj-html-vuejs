@@ -17,9 +17,9 @@ export default{
         this.startSlide()
     },
     methods:{
-          startSlide: function(){
-              this.timer = setInterval(this.next, 3000)
-          },
+          // startSlide: function(){
+          //     this.timer = setInterval(this.next, 3000)
+          // },
         next: function() {
             this.currentIndex += 1;
         },
@@ -87,7 +87,7 @@ img {
 }
 
 .next {
-  right: 0;
+  right: 10px;
 }
 
 .prev {

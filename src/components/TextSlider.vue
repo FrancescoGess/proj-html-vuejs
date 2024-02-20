@@ -21,8 +21,8 @@ export default{
             Un designer ha il dovere di creare un design senza tempo. Per essere senza tempo devi pensare molto <br>lontano nel futuro, non il prossimo anno, non tra due anni, <br> ma tra un minimo di 20 anni. 
         </p>
 
-    <div class="d-flex container-pic-citazione gap-3">
-        <figure class="">
+    <div class="d-flex container-pic-citazione gap-3 align-items-center">
+        <figure>
             <img src="../assets/03.jpg" alt="person">
         </figure>
         <div class="d-flex row">
