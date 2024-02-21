@@ -76,7 +76,7 @@ export default {
             <li v-for="(element, index) in navLinks" :key="index">
                 <a href="#" @mouseover="showDropdown(index)" @mouseleave="hideDropdown(index)">
                     {{ element.name }}
-                    <ul v-if="element.showDropdown" class="dropdown-menu">
+                    <ul v-if="element.showDropdown && (element.name === 'pages' || element.name === 'shop')" class="dropdown-menu">
                         <li v-for="(item, i) in element.dropdownItems" :key="i">
                             <a :href="item.url">{{ item.name }}</a>
                         </li>
