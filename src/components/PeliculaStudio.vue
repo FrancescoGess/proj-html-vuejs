@@ -62,7 +62,8 @@ export default{
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Lorem ipsum dolor sit amet consectetur.
             </span>
-        </div>   
+        </div>
+        <div class="zoom"></div>   
     </div>
     </div>
 </template>
@@ -82,12 +83,12 @@ export default{
     margin: 0 auto;
     height: 100%;
     width: 85%;
-
     .item-card{
         margin: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
+        transition: transform .2s;
 
         img{
             width: 200px;

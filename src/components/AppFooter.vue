@@ -9,15 +9,15 @@ export default{
           title: "contact info",
           items: [
             {
-              icon: "../assets/footer-location-dot-solid.svg",
+              icon: "src/assets/footer-location-dot-solid.svg",
               text: "2/45 Tower Street, New York USA"
             },
             {
-              icon: "../assets/footer-phone-solid.svg",
+              icon: "src/assets/footer-phone-solid.svg",
               text: "Call Us On 0800 840 1010"
             },
             {
-              icon: "../assets/footer-envelope-soli.svg",
+              icon: "src/assets/footer-envelope-soli.svg",
               text: "Demo@Example.com"
             }
           ]
