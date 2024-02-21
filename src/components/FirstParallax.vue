@@ -2,9 +2,36 @@
 export default{
     name: "FirstParallax",
     data(){
+        return{
+            contatoreCoffee: 0,
+            contatoreClients: 0,
+            contatoreAwards: 0,
+            timer: null
+        }
+    },
+    mounted(){
+        this.timer = setInterval(() => {
+            if (this.contatoreCoffee < 1906){
+                this.contatoreCoffee ++
+            }else {
+                clearInterval(this.timer) // per fermare il conteggio 
+                setTimeout(()=> {
+                    this.contatoreCoffee = 0 // riavvia il conteggio dopo tot secondi(2 in questo caso)
+                    this.timer = setInterval(()=>{
+                        if (this.contatoreCoffee < 1906 ) {
+                            this.contatoreCoffee ++
+                        } else{
+                            clearInterval(this.timer)
+                        }
+                    },0.5)
+                }, 2000)
+            }
+        }, 0.5)
+    },
+    beforeUnmount() {
+    clearInterval(this.timer) // Assicuriamoci di pulire l'intervallo quando l'istanza Vue viene distrutta
+    }}
 
-    }
-}
 </script>
 
 <template>
@@ -28,7 +55,7 @@ export default{
             </div>
             <div class="item">
                 <h1 class="fw-bold text-white">
-                    1,906
+                    {{ contatoreCoffee }}
                 </h1>
                 <span class="text-uppercase text-white fw-bold ">
                     cup of coffee

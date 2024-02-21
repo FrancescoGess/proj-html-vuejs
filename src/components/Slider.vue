@@ -12,9 +12,10 @@
         {{ list[currentIndex].title }}
     </h1>
 
-        <button style="border: none; margin-top: 30px;" class="text-uppercase fw-bold btn-light py-2 px-4">
-            read more
-        </button>
+
+<button style="border: none; margin-top: 30px;" class="text-uppercase fw-bold btn-light py-2 px-4">
+    read more
+</button>
 </div>
 </div>
 </div>
@@ -38,6 +39,7 @@ export default{
     name: "Slider",
     data(){
         return{
+            showModal: false,
             list: [
             {
                 image: 'src/assets/cinematic.jpg',
@@ -75,7 +77,13 @@ export default{
             this.currentIndex = this.list.length - 1
         } else {
             this.currentIndex = this.currentIndex - 1
-        }}
+        }},
+        openModal(){
+            this.showModal = true
+        },
+        closeModal(){
+            this.showModal = false
+        }
     },
 
 
@@ -85,6 +93,41 @@ export default{
 
 
 <style lang="scss" scoped>
+
+.modal {
+  display: none; /* Per default la finestra modale è nascosta */
+  position: fixed; /* Posizionamento fisso per sovrapporsi al contenuto */
+  z-index: 1; /* Ordine di sovrapposizione */
+  left: 0;
+  top: 0;
+  width: 100%; /* Occupa l'intera larghezza */
+  height: 100%; /* Occupa l'intera altezza */
+  background-color: rgba(0,0,0,0.5); /* Sfondo semi-trasparente */
+  overflow: auto; /* Scorrimento per contenuti che superano la finestra */
+}
+
+.modal-content {
+  background-color: #fefefe; /* Colore di sfondo */
+  margin: 15% auto; /* Margin per centrare verticalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Larghezza del contenuto */
+  max-width: 600px; /* Larghezza massima */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 .text-slider{
     position: relative;
 
