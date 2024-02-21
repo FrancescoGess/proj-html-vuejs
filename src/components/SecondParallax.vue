@@ -58,9 +58,9 @@ export default{
 
     <div id="carouselExampleIndicators" class="carousel slide">
   <div class="carousel-indicators">
-    <button @click="this.currentIndex = 0" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button @click="this.currentIndex = 1" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button @click="this.currentIndex = 2" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button @click="this.currentIndex = i" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button @click="this.currentIndex = i" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button @click="this.currentIndex = i" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
     <div 
@@ -135,21 +135,6 @@ export default{
         }
     }
 
- .fade-enter-active,
- .fade-leave-active {
-   overflow: hidden;
-   visibility: visible;
-   position: absolute;
-   width:100%;
-   opacity: 1;
- }
-
- .fade-enter
- .fade-leave-to {
-   visibility: hidden;
-   width:100%;
-   opacity: 0;
- }
 
  .img-slide {
    height:800px;

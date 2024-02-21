@@ -39,7 +39,7 @@ export default {
                         showDropdown: false,
                         dropdownItems: [
                             { name: "cinematic", url: "#" },
-                            { name: "i nostri cappelli", url: "#" },
+                            { name: "gift card", url: "#" },
                             { name: "merchandise", url: "#" },
                         ],
                     },
@@ -76,7 +76,7 @@ export default {
             <li v-for="(element, index) in navLinks" :key="index">
                 <a href="#" @mouseover="showDropdown(index)" @mouseleave="hideDropdown(index)">
                     {{ element.name }}
-                    <ul v-if="element.showDropdown && (element.name === 'pages' || element.name === 'shop')" class="dropdown-menu">
+                    <ul v-if="element.showDropdown && (element.name === 'pages' || element.name === 'shop')" class="dropdown-menu rounded-0 ">
                         <li v-for="(item, i) in element.dropdownItems" :key="i">
                             <a :href="item.url">{{ item.name }}</a>
                         </li>
@@ -119,10 +119,9 @@ export default {
         display: none;
         position: absolute;
         // background-color: black;
-        min-width: 160px;
+        min-width: 260px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        ;
-        
+        padding: 10px;
     }
     .dropdown-menu a {
             text-decoration: none;
