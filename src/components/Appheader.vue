@@ -136,7 +136,11 @@ export default {
     
     li:hover .dropdown-menu {
         display: block;
-        background-color: white;
+        background-color: black;
+
+        li a{
+            color: #ffffff;
+        }
     }
 
  .head-page{
