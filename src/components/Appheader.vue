@@ -17,9 +17,9 @@ export default {
                         name: "pages",
                         showDropdown: false,
                         dropdownItems: [
-                            { name: "Item 1", url: "#" },
-                            { name: "Item 2", url: "#" },
-                            { name: "Item 3", url: "#" },
+                            { name: "Il nostro blog", url: "#" },
+                            { name: "Dai un'occhiata ai nostri fumetti", url: "#" },
+                            { name: "su di noi ...", url: "#" },
                         ],
                     },
                     {
@@ -38,9 +38,9 @@ export default {
                         name: "shop",
                         showDropdown: false,
                         dropdownItems: [
-                            { name: "Item 4", url: "#" },
-                            { name: "Item 5", url: "#" },
-                            { name: "Item 6", url: "#" },
+                            { name: "cinematic", url: "#" },
+                            { name: "i nostri cappelli", url: "#" },
+                            { name: "merchandise", url: "#" },
                         ],
                     },
                 ],
@@ -58,61 +58,6 @@ export default {
             },
         },
     };
-
-
-// export default{
-//     name: "AppHeader",
-//     data() {
-//         return {
-//             navLinks: [
-//                 {
-//                     name: 'home',
-//                     showDropdown: false,
-//                     dropdownItems:[
-//                         {
-//                         name: "Item 1",
-//                         },
-//                         {
-//                         name: "Item 2"
-//                         }
-//                     ]
-//                 },
-//                 {
-//                     name: 'blog',
-//                 },
-//                 {
-//                     name: 'pages',
-//                 },
-//                 {
-//                     name: 'about',
-//                 },
-//                 {
-//                     name: 'contacts',
-//                 },
-//                 {
-//                     name: 'gallery',
-//                 },
-//                 {
-//                     name: 'shop',
-//                 }
-//             ],
-//         };
-//     },
-//     components: { 
-//         IconSvg 
-//     },
-//     methods: {
-//         toggleDropdown(){
-//             this.dropDownVisible = !this.dropDownVisible
-//         },
-//         keepDropdown() {
-//             this.isDropdownVisible = true;
-//         },
-//         hideDropdown() {
-//             this.isDropdownVisible = false;
-//         },
-//     }
-// }
 </script>
 
 <template>
@@ -184,15 +129,14 @@ export default {
             text-transform: uppercase;
             color: white;
             font-weight: bold;
-            padding: 10px;
+            // padding: 10px;
             
     
     }
-    .dropdown-menu a:hover {
-        background-color: #f1f1f1;
-    }
+    
     li:hover .dropdown-menu {
         display: block;
+        background-color: white;
     }
 
  .head-page{
@@ -213,16 +157,13 @@ export default {
          a{
              text-decoration: none;
              text-transform: uppercase;
-
+             
              color: black;
              font-weight: bold;
-             padding: 10px;
-         }
-
-         a:hover{
-            background-color: black;
-            color: white;
-            padding: 10px;
-         }
+            }
+            
+        //     a:hover{
+        //     color: white;
+        //  }
         }
 </style>
