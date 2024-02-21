@@ -118,7 +118,7 @@ export default {
 .dropdown-menu {
         display: none;
         position: absolute;
-        // background-color: black;
+        background-color: black;
         min-width: 260px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         padding: 10px;
@@ -128,7 +128,7 @@ export default {
             text-transform: uppercase;
             color: white;
             font-weight: bold;
-            // padding: 10px;
+            padding: 10px;
             
     
     }
@@ -144,7 +144,7 @@ export default {
 
  .head-page{
      background-color: #ffffff;
-    //  position: fixed;
+     /* position: fixed; */
      top: 0;
      width: 100%;
      overflow: hidden;
@@ -164,9 +164,6 @@ export default {
              color: black;
              font-weight: bold;
             }
-            
-        //     a:hover{
-        //     color: white;
-        //  }
+        
         }
 </style>
