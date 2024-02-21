@@ -1,53 +1,118 @@
 <script>
 import IconSvg from './iconSvg.vue';
+export default {
+        name: "AppHeader",
+        data() {
+            return {
+                navLinks: [
+                    {
+                        name: "home",
+                        
+                    },
+                    {
+                        name: "blog",
+                    
+                    },
+                    {
+                        name: "pages",
+                        showDropdown: false,
+                        dropdownItems: [
+                            { name: "Item 1", url: "#" },
+                            { name: "Item 2", url: "#" },
+                            { name: "Item 3", url: "#" },
+                        ],
+                    },
+                    {
+                        name: "about",
+                    
+                    },
+                    {
+                        name: "contacts",
+                    
+                    },
+                    {
+                        name: "gallery",
+                    
+                    },
+                    {
+                        name: "shop",
+                        showDropdown: false,
+                        dropdownItems: [
+                            { name: "Item 4", url: "#" },
+                            { name: "Item 5", url: "#" },
+                            { name: "Item 6", url: "#" },
+                        ],
+                    },
+                ],
+            };
+        },
+        components: {
+            IconSvg
+        },
+        methods: {
+            showDropdown(index) {
+                this.navLinks[index].showDropdown = true;
+            },
+            hideDropdown(index) {
+                this.navLinks[index].showDropdown = false;
+            },
+        },
+    };
 
 
-
-export default{
-    name: "AppHeader",
-    data() {
-        return {
-            dropDownVisible: false,
-            navLinks: [
-                {
-                    name: 'home',
-                },
-                {
-                    name: 'blog',
-                },
-                {
-                    name: 'pages',
-                },
-                {
-                    name: 'about',
-                },
-                {
-                    name: 'contacts',
-                },
-                {
-                    name: 'gallery',
-                },
-                {
-                    name: 'shop',
-                }
-            ],
-        };
-    },
-    components: { 
-        IconSvg 
-    },
-    methods: {
-        toggleDropdown(){
-            this.dropDownVisible = !this.dropDownVisible
-        },
-        keepDropdown() {
-            this.isDropdownVisible = true;
-        },
-        hideDropdown() {
-            this.isDropdownVisible = false;
-        },
-    }
-}
+// export default{
+//     name: "AppHeader",
+//     data() {
+//         return {
+//             navLinks: [
+//                 {
+//                     name: 'home',
+//                     showDropdown: false,
+//                     dropdownItems:[
+//                         {
+//                         name: "Item 1",
+//                         },
+//                         {
+//                         name: "Item 2"
+//                         }
+//                     ]
+//                 },
+//                 {
+//                     name: 'blog',
+//                 },
+//                 {
+//                     name: 'pages',
+//                 },
+//                 {
+//                     name: 'about',
+//                 },
+//                 {
+//                     name: 'contacts',
+//                 },
+//                 {
+//                     name: 'gallery',
+//                 },
+//                 {
+//                     name: 'shop',
+//                 }
+//             ],
+//         };
+//     },
+//     components: { 
+//         IconSvg 
+//     },
+//     methods: {
+//         toggleDropdown(){
+//             this.dropDownVisible = !this.dropDownVisible
+//         },
+//         keepDropdown() {
+//             this.isDropdownVisible = true;
+//         },
+//         hideDropdown() {
+//             this.isDropdownVisible = false;
+//         },
+//     }
+// }
 </script>
 
 <template>
@@ -60,19 +125,36 @@ export default{
                 </figure>
             </div>
 
-            <!-- NAVBAR -->
             <div>
+    <nav>
+        <ul class="navbar-flex d-flex gap-5 my-2">
+            <li v-for="(element, index) in navLinks" :key="index">
+                <a href="#" @mouseover="showDropdown(index)" @mouseleave="hideDropdown(index)">
+                    {{ element.name }}
+                    <ul v-if="element.showDropdown" class="dropdown-menu">
+                        <li v-for="(item, i) in element.dropdownItems" :key="i">
+                            <a :href="item.url">{{ item.name }}</a>
+                        </li>
+                    </ul>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+            <!-- NAVBAR -->
+            <!-- <div>
                 <nav>
                     <ul class="navbar-flex d-flex gap-5 my-2">
                         <li 
                         v-for="(element, index) in navLinks"
                         :key="index">
-                            <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">{{ element.name }}</a>
+                            <a href="#">{{ element.name }}</a>
                         </li>
                     </ul>
                 </nav>
                 
-            </div>
+            </div> -->
 
             <!-- SOCIAL LINKS -->
             <div class="icons">
@@ -88,35 +170,59 @@ export default{
 
 <style lang="scss" scoped>
 
-.head-page{
-    background-color: #ffffff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.container-logo { 
-    width: 250px;
-}
-
-.navbar-flex{
-    
-    list-style-type: none;
-        a{
+.dropdown-menu {
+        display: none;
+        position: absolute;
+        // background-color: black;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        ;
+        
+    }
+    .dropdown-menu a {
             text-decoration: none;
             text-transform: uppercase;
-
-            color: black;
+            color: white;
             font-weight: bold;
             padding: 10px;
-        }
+            
+    
+    }
+    .dropdown-menu a:hover {
+        background-color: #f1f1f1;
+    }
+    li:hover .dropdown-menu {
+        display: block;
+    }
 
-        a:hover{
+ .head-page{
+     background-color: #ffffff;
+    //  position: fixed;
+     top: 0;
+     width: 100%;
+     overflow: hidden;
+ }
+
+ .container-logo { 
+     width: 250px;
+ }
+
+ .navbar-flex{
+    
+     list-style-type: none;
+         a{
+             text-decoration: none;
+             text-transform: uppercase;
+
+             color: black;
+             font-weight: bold;
+             padding: 10px;
+         }
+
+         a:hover{
             background-color: black;
             color: white;
             padding: 10px;
+         }
         }
-}
 </style>
