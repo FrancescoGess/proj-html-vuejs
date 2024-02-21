@@ -4,7 +4,8 @@ export default{
     name: "AppFooter",
     data(){
         return{
-            props: []
+            props: [
+            ]
         }
     }
 }
@@ -15,13 +16,25 @@ export default{
     <div class="container">
       <div class="row">
         <div class="footer-col">
-          <h4>company</h4>
-          <ul>
-            <li><a href="#">about us</a></li>
-            <li><a href="#">our services</a></li>
-            <li><a href="#">privacy policy</a></li>
-            <li><a href="#">affiliate program</a></li>
-          </ul>
+          <h4 class="text-uppercase">contact info</h4>
+          <div class="d-flex container-foot gap-3">
+              <img src="../assets/footer-location-dot-solid.svg" alt="">
+            <span>
+              2/45 Tower Street, New York USA
+            </span>
+          </div>
+          <div class="d-flex container-foot gap-3">
+              <img src="../assets/footer-phone-solid.svg" alt="">
+            <span>
+              Call Us On 0800 840 1010
+            </span>
+          </div>
+          <div class="d-flex container-foot gap-3">
+              <img src="../assets/footer-envelope-soli.svg" alt="">
+            <span>
+              Demo@Example.com
+            </span>
+          </div>
         </div>
         <div class="footer-col">
           <h4>get help</h4>
@@ -43,15 +56,34 @@ export default{
           </ul>
         </div>
         <div class="footer-col">
-          <h4>follow us</h4>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <h4 class="text-uppercase">newsletter</h4>
+          <div class="form-mail">
+            <span>
+              Subscribe To Receive Inspiration, <br>
+              Ideas & News In Your Inbox
+            </span>
+            <form class="py-4">
+              <input style="background-color: #66666619;" type="email" class="p-2 px-4 rounded-0 border-0" placeholder="Enter Your email">
+            </form>
+            <button style="border: none; background-color: white;" class="text-uppercase fw-bold btn-light py-2 px-4">
+            subscribe
+        </button>
           </div>
         </div>
+
+        <div class="py-1">
+        </div>
+        <hr style="color: white;">
       </div>
+
+      <div class="container-copyright">
+        <span>
+          &#9426; 2023 All Rights Reserved. Developed By Frank Gess
+        </span>
+      </div>
+
+
+      
      </div>
     </footer>
 </template>
@@ -65,13 +97,37 @@ export default{
     margin:0;
     padding:0;
     box-sizing: border-box;
+  }
+  .container-copyright{
+    margin: 0 auto;
+    text-align: center;
+
+    span{
+      color: white;
+    }
+  }
+
+.container-foot{
+  color: #bbbbbb;
+  font-weight: bold;
+  padding-top: 15px;
 }
-.container{
-    height: 300px;
+
+img{
+  width: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+.form-mail{
+  color: #bbbbbb;
+}
+.container{ 
   margin:auto;
+
 }
 .row{
-    padding: 30px;
+  padding: 30px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -116,7 +172,7 @@ ul{
   display: inline-block;
   height: 40px;
   width: 40px;
-    background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.2);
   margin:0 10px 10px 0;
   text-align: center;
   line-height: 40px;

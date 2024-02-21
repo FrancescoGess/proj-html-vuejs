@@ -44,7 +44,7 @@ export default {
                     the most beautiful thing
                 </h5>
                 <span class="py-4">
-                    music video
+                    Music video
                 </span>
             </div>   
        </div>

@@ -7,6 +7,7 @@ export default{
     name: "AppHeader",
     data() {
         return {
+            dropDownVisible: false,
             navLinks: [
                 {
                     name: 'home',
@@ -34,6 +35,17 @@ export default{
     },
     components: { 
         IconSvg 
+    },
+    methods: {
+        toggleDropdown(){
+            this.dropDownVisible = !this.dropDownVisible
+        },
+        keepDropdown() {
+            this.isDropdownVisible = true;
+        },
+        hideDropdown() {
+            this.isDropdownVisible = false;
+        },
     }
 }
 </script>
@@ -55,7 +67,7 @@ export default{
                         <li 
                         v-for="(element, index) in navLinks"
                         :key="index">
-                            <a href="#">{{ element.name }}</a>
+                            <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">{{ element.name }}</a>
                         </li>
                     </ul>
                 </nav>
@@ -98,6 +110,13 @@ export default{
 
             color: black;
             font-weight: bold;
+            padding: 10px;
+        }
+
+        a:hover{
+            background-color: black;
+            color: white;
+            padding: 10px;
         }
 }
 </style>

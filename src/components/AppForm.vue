@@ -41,7 +41,7 @@ export default{
                     
                     <textarea style="background-color: #66666619; border: none;" name="text" id="" cols="65" rows="10" class="p-3" placeholder="Enter your message"></textarea>
                     <div class="btn-custom">
-                        <button type="submit" class="rounded-0 fw-bold btn btn-dark p-2 px-5">SUBMIT NOW</button>
+                        <button style="width: 100%;" type="submit" class="rounded-0 fw-bold btn btn-dark p-2 px-5">SUBMIT NOW</button>
                     </div>
                   </form>
             </div>
@@ -53,6 +53,10 @@ export default{
 <style lang="scss" scoped>
 .container-flex{
     height: 800px;
+
+    form{
+        width: 572px;
+    }
 
     .container-form{
         padding: 100px;

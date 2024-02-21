@@ -85,14 +85,13 @@ export default{
 
     .item-card{
         margin: auto;
-        width: calc(100%/3);
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
 
         img{
             width: 200px;
+            height: 200px;
         }
 
         span{
