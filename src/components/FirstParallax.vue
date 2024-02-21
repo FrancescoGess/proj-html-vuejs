@@ -4,8 +4,6 @@ export default{
     data(){
         return{
             contatoreCoffee: 0,
-            contatoreClients: 0,
-            contatoreAwards: 0,
             timer: null
         }
     },
