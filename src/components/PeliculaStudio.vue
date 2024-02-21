@@ -49,7 +49,7 @@ export default{
                 Lorem ipsum dolor sit amet consectetur.
             </span>
         </div>
-        <div class="item-card my-5">
+        <div class="item-card m-5">
             <img src="../assets/image (17).svg" alt="">
             <span class="py-4">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
