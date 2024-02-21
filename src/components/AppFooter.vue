@@ -2,18 +2,85 @@
 
 export default{
     name: "AppFooter",
-    data(){
-        return{
-            props: [
-            ]
+    data() {
+    return {
+      footerColumns: [
+        {
+          title: "contact info",
+          items: [
+            {
+              icon: "../assets/footer-location-dot-solid.svg",
+              text: "2/45 Tower Street, New York USA"
+            },
+            {
+              icon: "../assets/footer-phone-solid.svg",
+              text: "Call Us On 0800 840 1010"
+            },
+            {
+              icon: "../assets/footer-envelope-soli.svg",
+              text: "Demo@Example.com"
+            }
+          ]
+        },
+        {
+          title: "get help",
+          list: [
+            { link: "#", text: "FAQ" },
+            { link: "#", text: "shipping" },
+            { link: "#", text: "returns" },
+            { link: "#", text: "order status" },
+            { link: "#", text: "payment options" }
+          ]
+        },
+        {
+          title: "online shop",
+          list: [
+            { link: "#", text: "watch" },
+            { link: "#", text: "bag" },
+            { link: "#", text: "shoes" },
+            { link: "#", text: "dress" }
+          ]
+        },
+        {
+          title: "newsletter",
+          form: {
+            text: "Subscribe To Receive Inspiration, Ideas & News In Your Inbox",
+            placeholder: "Enter Your email",
+            buttonText: "subscribe"
+          }
         }
-    }
+      ]
+    };
+  }
 }
 </script>
 
 <template>
 <footer>
-    <div class="container">
+
+  <div class="container">
+    <div class="row">
+      <div v-for="(column, index) in footerColumns" :key="index" class="footer-col">
+        <h4 v-if="column.title" :class="{'text-uppercase': column.uppercase}">{{ column.title }}</h4>
+        <div v-if="column.items" v-for="(item, itemIndex) in column.items" :key="itemIndex" class="d-flex container-foot gap-3">
+          <img v-if="item.icon" :src="item.icon" alt="" />
+          <span>{{ item.text }}</span>
+        </div>
+        <ul v-if="column.list" v-for="(listItem, listItemIndex) in column.list" :key="listItemIndex">
+          <li><a :href="listItem.link">{{ listItem.text }}</a></li>
+        </ul>
+        <div v-if="column.form" class="form-mail">
+          <span>{{ column.form.text }}</span>
+          <form class="py-4">
+            <input style="background-color: #66666619;" type="email" class="p-2 px-4 rounded-0 border-0" :placeholder="column.form.placeholder">
+          </form>
+          <button style="border: none; background-color: white;" class="text-uppercase fw-bold btn-light py-2 px-4">
+            {{ column.form.buttonText }}
+          </button>
+        </div>
+      </div>
+  
+    <!-- <div class="container">
       <div class="row">
         <div class="footer-col">
           <h4 class="text-uppercase">contact info</h4>
@@ -69,7 +136,7 @@ export default{
             subscribe
         </button>
           </div>
-        </div>
+        </div> -->
 
         <div class="py-1">
         </div>
@@ -81,9 +148,6 @@ export default{
           &#9426; 2023 All Rights Reserved. Developed By Frank Gess
         </span>
       </div>
-
-
-      
      </div>
     </footer>
 </template>
